@@ -9,7 +9,7 @@ jobs:
       # - name: Fetch remote branch
       #   run: git fetch origin feature-branch-c:feature-branch-c
       - name: Create new branch
-        run: git checkout -b feature-branch-e  # replace 'feature-branch' with your branch name
+        run: git checkout -b feature-branch  # replace 'feature-branch' with your branch name
       - name: Copy code from one folder to another
         run: |
           mkdir -p destination
@@ -28,13 +28,13 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: feature-branch-e  # replace 'feature-branch' with your branch name
-          github_token: ${{ secrets.PAT1 }}
+          branch: feature-branch  # replace 'feature-branch' with your branch name
+          github_token: ${{ secrets.GITHUB_TOKEN }} # ${{ secrets.PAT1 }}
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PAT1 }}
-          branch: feature-branch-e
+          token: ${{ secrets.GITHUB_TOKEN }} # ${{ secrets.PAT1 }}
+          branch: feature-branch
           base: main  # replace 'main' with the base branch you want to target
           title: "Copy Code and Create Pull Request"
           body: "This pull request was automatically created to copy code from source to destination folder."
