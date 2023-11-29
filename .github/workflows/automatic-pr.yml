@@ -29,11 +29,11 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: feature-branch-e  # replace 'feature-branch' with your branch name
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.PAT1 }}
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT1 }}
           branch: feature-branch-e
           base: main  # replace 'main' with the base branch you want to target
           title: "Copy Code and Create Pull Request"
