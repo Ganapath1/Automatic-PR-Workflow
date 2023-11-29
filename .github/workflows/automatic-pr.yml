@@ -32,7 +32,7 @@ jobs:
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: "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"   # ${{ secrets.GITHUB_TOKEN }}
           branch: feature-branch-e
           base: main  # replace 'main' with the base branch you want to target
           title: "Copy Code and Create Pull Request"
